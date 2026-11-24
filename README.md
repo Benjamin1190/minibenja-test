@@ -28,8 +28,8 @@ python -m http.server 8000     # y abrí http://localhost:8000
 ## Desplegar en Vercel (un solo proyecto)
 
 1. Subí esta carpeta a GitHub e importala en Vercel (*Add New → Project*). **Framework Preset: Other**; sin Build Command ni Output Directory (se sirve la raíz tal cual).
-2. En *Settings → Domains* agregá los tres dominios al **mismo proyecto**: `minibenja.com`, `generador.minibenja.com`, `tools.minibenja.com`.
-3. En tu proveedor de DNS creá un registro por subdominio con el valor que muestre Vercel:
+2. Con solo `minibenja.com` ya funciona todo: la home enlaza a `minibenja.com/generador/` y `minibenja.com/tools/`. Los subdominios son **opcionales** (pasos 3 en adelante). Para usarlos, en *Settings → Domains* agregá `generador.minibenja.com` y `tools.minibenja.com` al **mismo proyecto**.
+3. (Solo para los subdominios) En tu proveedor de DNS creá un registro por subdominio con el valor que muestre Vercel:
 
    | Tipo | Nombre | Valor |
    |---|---|---|

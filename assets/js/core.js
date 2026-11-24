@@ -64,19 +64,22 @@
   };
 
   /* ───────── aplicaciones del portal ───────── */
-  var prod = /(^|\.)minibenja\.com$/.test(location.hostname);
-  var base = location.pathname.replace(/\/(generador|tools)\/(index\.html)?$/, "/").replace(/index\.html$/, "");
+  // Los enlaces usan RUTAS (/generador/, /tools/): funcionan en minibenja.com sin configurar subdominios.
+  // Si estás en un subdominio (generador.minibenja.com), los enlaces apuntan al dominio principal.
+  var onSub = /^(generador|tools)\.minibenja\.com$/.test(location.hostname);
+  var prod = onSub;
+  var base = onSub ? "https://minibenja.com/" : location.pathname.replace(/\/(generador|tools)(\/(index\.html)?)?$/, "/").replace(/index\.html$/, "");
   MB.APPS = [
     { id: "generador", name: "Generadores", icon: "wand-sparkles", status: "ok", tags: "qr contraseña password uuid hash url lorem color",
       desc: "Contraseñas, códigos QR, UUID, hashes, colores, Lorem Ipsum, slugs, enlaces de WhatsApp y UTM.",
-      url: prod ? "https://generador.minibenja.com/" : base + "generador/" },
+      url: base + "generador/" },
     { id: "tools", name: "Herramientas", icon: "wrench", status: "ok", tags: "json base64 markdown calculadora reloj conversor cronometro",
       desc: "Calculadora, conversores, JSON, Base64, URL, cronómetro, temporizador, reloj mundial y Markdown.",
-      url: prod ? "https://tools.minibenja.com/" : base + "tools/" },
+      url: base + "tools/" },
     { id: "talky", name: "Talky Talky", icon: "messages-square", status: "ext", external: true, tags: "chat mensajes",
       desc: "Aplicación de mensajes publicada en talky-talky.vercel.app.", url: "https://talky-talky.vercel.app" }
   ];
-  MB.HOME = prod ? "https://minibenja.com/" : base;
+  MB.HOME = base;
 
   /* ───────── tema claro / oscuro ───────── */
   function isDark() { return document.documentElement.classList.contains("dark"); }
