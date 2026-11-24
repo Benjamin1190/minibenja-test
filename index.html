@@ -1,9 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Minibenja</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MINIBENJA — Herramientas online gratuitas</title>
+  <meta name="description" content="Portal de herramientas online gratuitas: generadores, utilidades y mensajería. Todo funciona en tu navegador.">
+  <meta name="theme-color" content="#6366f1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%23a78bfa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M16 6l2.2 6.8L25 15l-6.8 2.2L16 24l-2.2-6.8L7 15l6.8-2.2z' fill='white'/%3E%3C/svg%3E">
+  <script>try{var t=localStorage.getItem('mb-theme');if(t==='"dark"'||(t!=='"light"'&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){document.documentElement.classList.add('dark')}</script>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <h1>Hola</h1>
+  <header id="nav"></header>
+  <main class="container" id="app"><noscript><p class="notice warn">MINIBENJA necesita JavaScript para funcionar.</p></noscript></main>
+  <footer id="foot"></footer>
+  <script src="assets/vendor/lucide.min.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script>
+    MB.layout("home");
+    MB.$("#app").innerHTML = MB.hero("Herramientas online gratuitas", 'Todo lo que necesitás, <span class="gradient-text">en un solo lugar</span>',
+      "Generadores y utilidades que funcionan en tu navegador, sin registros y sin guardar tus datos en ningún servidor.") + '<div id="grid"></div>';
+    MB.grid(MB.$("#grid"), MB.APPS.map(function (a) { return { name: a.name, desc: a.desc, icon: a.icon, tags: a.tags, href: a.url, external: a.external, status: a.status }; }), "Buscar aplicaciones y herramientas…");
+  </script>
 </body>
 </html>

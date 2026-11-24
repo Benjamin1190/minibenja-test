@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Herramientas · MINIBENJA</title>
+  <meta name="description" content="Calculadora, conversores, JSON, Base64, cronómetro, reloj mundial y Markdown. Todo en tu navegador.">
+  <meta name="theme-color" content="#6366f1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%236366f1'/%3E%3Cpath d='M16 6l2.2 6.8L25 15l-6.8 2.2L16 24l-2.2-6.8L7 15l6.8-2.2z' fill='white'/%3E%3C/svg%3E">
+  <script>try{var t=localStorage.getItem('mb-theme');if(t==='"dark"'||(t!=='"light"'&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){document.documentElement.classList.add('dark')}</script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header id="nav"></header>
+  <main class="container" id="app"><noscript><p class="notice warn">MINIBENJA necesita JavaScript para funcionar.</p></noscript></main>
+  <footer id="foot"></footer>
+  <script src="../assets/vendor/lucide.min.js"></script>
+  <script src="../assets/js/core.js"></script>
+  <script src="../assets/js/herramientas.js"></script>
+  <script>
+    MB.mountSite({ current: "tools", eyebrow: "tools.minibenja.com", title: "Herramientas online",
+      subtitle: "Utilidades que funcionan en tu navegador: tus datos no salen de tu dispositivo.", placeholder: "Buscar herramienta…", tools: MB.HERRAMIENTAS });
+  </script>
+</body>
+</html>
